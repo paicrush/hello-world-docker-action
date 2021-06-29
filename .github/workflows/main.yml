@@ -25,4 +25,5 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: build images
         run: |
-            docker build -t paicrush/helloworld .
+            docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
